@@ -11,7 +11,6 @@ import com.alipay.cqrsexample.ddd.service.UserUtility;
 import com.alipay.cqrsexample.mvc.model.Contact;
 import com.alipay.cqrsexample.mvc.model.User;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,7 +30,7 @@ public class UserAggregate {
         UserCreatedEvent event = new UserCreatedEvent(command.getUserId(),
                 command.getFirstName(), command.getLastName());
         writeRepository.addEvent(command.getUserId(), event);
-        return Arrays.asList(event);
+        return List.of(event);
     }
 
     public List<Event> handleUpdateUserCommand(UpdateUserCommand command) {

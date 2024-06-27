@@ -11,8 +11,7 @@ import java.util.Map;
  * @create 2024-06-27 22:44
  */
 public class EventStore {
-    private Map<String, List<Event>> store = new HashMap<>();
-
+    private final Map<String, List<Event>> store = new HashMap<>();
 
     public void addEvent(String userId, Event event) {
         store.get(userId).add(event);

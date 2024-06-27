@@ -1,7 +1,6 @@
 package com.alipay.cqrsexample.ddd.project;
 
 import com.alipay.cqrsexample.ddd.domain.UserAddress;
-import com.alipay.cqrsexample.ddd.domain.UserContact;
 import com.alipay.cqrsexample.ddd.events.Event;
 import com.alipay.cqrsexample.ddd.events.UserAddressAddedEvent;
 import com.alipay.cqrsexample.ddd.events.UserAddressRemovedEvent;
@@ -16,12 +15,12 @@ import java.util.Set;
 
 /**
  * @author hyy
- * @Description
+ * @Description 投影仪具有将写域模型投影到读域模型的逻辑
  * @create 2024-06-27 22:05
  */
 public class UserProjector {
 
-    UserReadRepository readRepository = new UserReadRepository();
+    private final UserReadRepository readRepository;
 
     public UserProjector(UserReadRepository readRepository) {
         this.readRepository = readRepository;
